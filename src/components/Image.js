@@ -2,7 +2,7 @@ import React from "react";
 
 const Image = ({ url, title }) => (
   <li>
-    <img src={url} alt={title} />
+    <img data-cy="img" src={url} alt={title} />
   </li>
 );
 

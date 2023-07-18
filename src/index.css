@@ -142,7 +142,7 @@ input {
   transition: transform 1.25s;
 }
 
-.photo-container li:hover img {
+.photo-container li img:hover {
   transform: scale(1.65);
 }
 
