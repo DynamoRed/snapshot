@@ -1,8 +1,6 @@
 /// <reference types="cypress" />
 const apiKey = "636e1481b4f3c446d26b8eb6ebfe7127";
 
-import React, { useState } from "react";
-
 describe('Search test suite', () => {
     beforeEach(() => {
         cy.visit('/');
@@ -13,6 +11,11 @@ describe('Search test suite', () => {
         cy.get('button').click();
 
         cy.url().should("include","/search/code");
+    })
+
+    it('Search a empty value should not redirect', () => {
+        cy.get('input').type(' ');
+        cy.get('button').should("be.disabled")
     })
 
     it('Search a random value should return non-null data', () => {

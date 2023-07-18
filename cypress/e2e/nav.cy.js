@@ -1,9 +1,13 @@
 /// <reference types="cypress" />
-import React, { useState } from "react";
 
 describe('Navigation between pages test suites', () => {
     beforeEach(() => {
         cy.visit('/');
+    })
+
+    it('Visit a unknown page should return "Not Found"', () => {
+        cy.visit("/djksqjdkqsjdkjqskdjk")
+        cy.get("h2").contains("Page Not Found")
     })
 
     it('By default should go to montains search page', () => {

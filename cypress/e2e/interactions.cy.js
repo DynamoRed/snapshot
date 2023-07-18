@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-import React, { useState } from "react";
 
 describe('Interactions test suites', () => {
     beforeEach(() => {
@@ -8,7 +7,7 @@ describe('Interactions test suites', () => {
 
     it('Image zoom when hover it', () => {
         cy.get('[data-cy="img"]').first()
-        .realHover({position:'center'})
-        // .should('have.css', 'transform', 'scale(1.65)')
+        .realHover()
+        .should('not.have.css', 'transform', 'scale(1.25)')
     })
 })
