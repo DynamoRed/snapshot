@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-
+import React, { useState } from "react";
 
 describe('Navigation between pages test suites', () => {
     beforeEach(() => {

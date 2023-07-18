@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import React, { useState } from "react";
 
 describe('Interactions test suites', () => {
     beforeEach(() => {
