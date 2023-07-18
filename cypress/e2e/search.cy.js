@@ -33,4 +33,12 @@ describe('Search test suite', () => {
             expect(response.body).to.have.property('stat','fail');
         });
     })
+
+    it('Search a unknown value should return null data', () => {
+        cy.request('GET', `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=dkqsjdkqkjk&per_page=24&format=json&nojsoncallback=1`).then(response => {
+            expect(response.status).to.equal(200);
+            expect(response.body).to.have.property('photos');
+            expect(response.body.photos.total).to.be.equal(0);
+        });
+    })
 })
